@@ -5,12 +5,12 @@ class Player {
     X = 0;
     Y = 0;
     Points = 0;
-    Net = null;
+    Network = null;
 
     constructor(x, y, hiddens) {
         this.X = x;
         this.Y = y;
-        Net = new Lib.AI(hiddens);
+        this.Network = new Lib.AI(hiddens);
     }
 }
 

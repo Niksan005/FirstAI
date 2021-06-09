@@ -6,7 +6,6 @@ class Map {
     Map = [];
     N = 1;
     Nsquared = 1;
-    Players = null;
 
     constructor(fill, n) {
         this.N = n;
@@ -14,12 +13,11 @@ class Map {
         for (let i = 0; i < this.Nsquared; i++) {
             this.Map[i] = fill;
         }
-        //Player = new Player.Player();
     }
 
-    GenerateFruid() {
+    GenerateFruid(fill) {
         var i = this.RandomI();
-        this.Map[i] = 1;
+        this.Map[i] = fill;
     }
 
     RandomI() {
@@ -28,6 +26,9 @@ class Map {
 
     GetByXY(x, y) {
         return this.Map[Mapping.XYtoI(x, y, this.N)];
+    }
+    SetByXY(x, y, fill) {
+        this.Map[Mapping.XYtoI(x, y, this.N)] = fill;
     }
 
     GetByI(i) {
